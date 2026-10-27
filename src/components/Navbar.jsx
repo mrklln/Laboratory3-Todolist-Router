@@ -10,7 +10,7 @@ function Navbar() {
         <nav className="w-full max-w-6xl mx-auto mb-4 rounded-xl shadow-lg px-4 py-3 flex items-center justify-between">
             <span className="text-white font-bold text-2xl">To-Do App</span>
             <div className="flex gap-2">
-                <NavLink to="/home" end className={linkClass}>Home</NavLink>
+                <NavLink to="/" end className={linkClass}>Home</NavLink>
                 <NavLink to="/about" className={linkClass}>About</NavLink>
             </div>
         </nav>
