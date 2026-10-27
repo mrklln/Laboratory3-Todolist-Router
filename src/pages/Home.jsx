@@ -1,15 +1,18 @@
 import Todolist from '../components/Todolist'
-import Userguide from '../components/userguide'
 
 function Home() {
     return (
-        <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-4 md:gap-6 items-start">
-            <div className="w-full md:flex-1 [&>*]:w-full">
+        <div className="w-full max-w-6xl mx-auto gap-4 md:gap-6 items-start">
+             <h1 className="text-3xl font-bold mb-2 text-center text-white">Welcome to the To-Do App! 👋</h1>
+             <p className="text-slate-300 italic max-w-xl mx-auto text-center mb-5">
+                Plan your day, organize tasks into groups, 
+                and track your progress, all in one place. 
+                Add a task below to get started.
+             </p>
+            <div className="w-full md:flex-1 *:w-full">
                 <Todolist />
             </div>
-            <div className="w-full md:w-80 lg:w-96 [&>*]:w-full">
-                <Userguide />
-            </div>
+            
         </div>
     )
 }

@@ -28,14 +28,14 @@ function Todolist  () {
 
 
   return (
-    <div className='bg-white rounded-xl shadow-lg p-4 sm:p-6'>
+    <div className='bg-white rounded-xl w-full max-w-3xl mx-auto shadow-lg p-4 sm:p-6'>
         <h1 className='sm:text-2xl text-center font-bold'><span className="mr-2">📝</span>To-Do-List</h1>
         <p className='text-center text-sm italic'>Laboratory 3 with router</p>
 
         <div className="flex gap-2 mb-4"> 
             <input className="flex-1 min-w-0 border border-gray-400 rounded px-3 py-2" type="text" value={text} onChange={(e) => setText(e.target.value)} 
                 onKeyDown={(e) => e.key === "Enter" && addTask()} placeholder="Add a task..."/>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={addTask}>Add Task</button>
+                <button className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer" onClick={addTask}>Add Task</button>
         </div>
 
         <div className="p-3 sm:p-4 mb-4">
@@ -61,7 +61,7 @@ function Todolist  () {
         </div>
         {tasks.length > 0 && (
                 <div className="flex justify-center mt-4">
-                    <button className="bg-red-500 text-white px-4 py-2 rounded" onClick={clearAll}>Clear All</button>
+                    <button className="bg-red-500 text-white px-4 py-2 rounded cursor-pointer" onClick={clearAll}>Clear All</button>
                 </div>
             )}
     </div>
