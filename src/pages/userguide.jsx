@@ -6,6 +6,9 @@ function Userguide() {
         <>↩️ Click <b>Undo</b> to move it back to Not Done.</>,
         <>🗑️ Click <b>Delete</b> to remove a task.</>,
         <>🔄 Click <b>Clear All</b> to reset everything.</>,
+        <>👥 Click <b>Groups</b> type the name of the group and click <b>Add Group </b>to create a Group</>,
+        <>➕ To add task on a group, Click <b>Open</b> to a existing group then type the task and click <b>Add Task</b></>,
+        <>🔗 To navigate between pages, click the pages on <b>Navigation bar</b></>
     ];
 
     return (
