@@ -1,6 +1,6 @@
 import Todolist from '../components/Todolist'
 
-function Home() {
+function Home(props) {
     return (
         <div className="w-full max-w-6xl mx-auto gap-4 md:gap-6 items-start">
              <h1 className="text-3xl font-bold mb-2 text-center text-white">Welcome to the To-Do App! 👋</h1>
@@ -10,7 +10,7 @@ function Home() {
                 Add a task below to get started.
              </p>
             <div className="w-full md:flex-1 *:w-full">
-                <Todolist />
+                <Todolist {...props} />
             </div>
             
         </div>

@@ -35,7 +35,7 @@ function Groups({ groups, addGroup, deleteGroup }) {
                             <Link to={`/groups/${g.id}`} className="px-3 py-1 rounded-lg bg-blue-500 text-white">
                                 Open
                             </Link>
-                            <button onClick={() => deleteGroup(g.id)} className="px-3 py-1 rounded-lg bg-red-600 text-white cursor-pointer">
+                            <button onClick={() => { if (window.confirm("Delete this task?")) deleteGroup(g.id)}} className="px-3 py-1 rounded-lg bg-red-600 text-white cursor-pointer">
                                 Delete
                             </button>
                         </span>

@@ -26,17 +26,12 @@ function GroupTask({ groups, tasks, addTask, toggleTask, deleteTask }) {
 
     return (
         <div className="w-full max-w-2xl mx-auto">
-            <Link to="/groups" className="underline text-blue-300">← Back to groups</Link>
+            <Link to="/groups" className=" text-white">← Back to groups</Link>
             <h1 className="text-2xl font-bold my-3 text-white!">{group.name}</h1>
 
             <div className="flex gap-2 mb-4">
-                <input
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
-                    placeholder="Add a task..."
-                    className="flex-1 px-3 py-2 rounded-lg bg-white text-black"
-                />
+                <input value={title} onChange={(e) => setTitle(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleAdd()} placeholder="Add a task..."
+                    className="flex-1 px-3 py-2 rounded-lg bg-white text-black"/>
                 <button onClick={handleAdd} className="px-4 py-2 rounded-lg bg-blue-500 text-white">
                     Add Task
                 </button>
@@ -56,7 +51,7 @@ function GroupTask({ groups, tasks, addTask, toggleTask, deleteTask }) {
                             <button onClick={() => toggleTask(t.id)} className="px-3 py-1 rounded-lg bg-green-600 text-white">
                                 {t.done ? 'Undo' : 'Done'}
                             </button>
-                            <button onClick={() => deleteTask(t.id)} className="px-3 py-1 rounded-lg bg-red-600 text-white">
+                            <button onClick={() => { if (window.confirm("Delete this task?")) deleteTask(t.id)}} className="px-3 py-1 rounded-lg bg-red-600 text-white">
                                 Delete
                             </button>
                         </span>
