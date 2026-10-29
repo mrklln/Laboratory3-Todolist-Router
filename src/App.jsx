@@ -13,16 +13,16 @@ function App() {
         return saved ? JSON.parse(saved) : []
     })
     const [tasks, setTasks] = useState(() => {
-        const saved = localStorage.getItem('group-tasks')
+        const saved = localStorage.getItem('group-tasks')//storing group task so the refresh dont erase it
         return saved ? JSON.parse(saved) : []
     })
 
     useEffect(()=>{
-        localStorage.setItem('groups', JSON.stringify(groups))
+        localStorage.setItem('groups', JSON.stringify(groups))//saving groups to localstorage
     },[groups])
-    
+
     useEffect(()=>{
-        localStorage.setItem('group-tasks', JSON.stringify(tasks))
+        localStorage.setItem('group-tasks', JSON.stringify(tasks))//storing group task so the refresh dont erase it
     },[tasks])
 
     const addGroup = (name) =>
@@ -41,7 +41,6 @@ function App() {
     const deleteTask = (id) =>
         setTasks((prev) => prev.filter((t) => t.id !== id))
 
-    
     const taskActions = { tasks, addTask, toggleTask, deleteTask  }
 
     return (

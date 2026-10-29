@@ -6,10 +6,8 @@ function Todolist({ groups = [], tasks, addTask, toggleTask, deleteTask }) {
 
     const getGroupName = (groupId) => groups.find((g) => g.id === groupId)?.name;
 
-    const mainTasks = tasks.filter((t) => t.groupId);
-
     const notDoneTasks = tasks.filter((t) => !t.done);
-    const doneTasks = tasks.filter((t) => t.done);
+    const doneTasks = tasks.filter((t) => t.done);// Separate tasks by status: Not Done and Done
 
     const handleAdd = () => {
         if (text.trim() !== "") {
@@ -25,7 +23,7 @@ function Todolist({ groups = [], tasks, addTask, toggleTask, deleteTask }) {
         }
     };
 
-    const toItem = (task) => ({
+    const toItem = (task) => ({// Show the task of a group with the group name and the task name
         ...task,
         text:task.title,
         groupName: getGroupName(task.groupId)
